@@ -1950,7 +1950,7 @@ ul.latest-post a i {
 	.comments .replys.children {margin-left: 24px;}
 	.input-columns .column1 .column-inner{padding:0;}
 	.block-contact {margin-bottom: 324px;}
-	.contact-overlay {left: 0;top: 101%; width: 100%;}
+	.contact-overlay {left: 0; width: 100%;} /*Top: 101% */
 	.contact-form .submit,.reply-form .submit, .input-columns .column1, .input-columns .column2{float:none;width:100%;}
 	.post-meta li{float:none;}
 	.info-det {width: 190px;}
