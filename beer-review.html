@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+	
+	
+	 <!-- Metas -->
+        <meta charset="utf-8">
+        <title>Christina Lytle - Salesforce Administrator</title>
+		<link rel="icon" href="img/cloud-computing.png"> 
+        <meta name="description" content="">
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+		  
+
+
+		<!-- Css -->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href="css/magnific-popup.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="css/font.css" rel="stylesheet" type="text/css"  media="all">
+		<link href="css/base.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href="css/main.css"  rel="stylesheet" type="text/css" media="all"/>
+		<link href="css/owl-carousel/owl.carousel.css" rel="stylesheet"  media="all">
+		<link href="css/owl-carousel/owl.theme.css" rel="stylesheet"  media="all">
+
+    </head>
+    <body class="bg-grey">
+	
+<!-- Preloader -->
+<div class="loader">
+		<!-- Loader inner -->
+  <div class="loader-inner">
+	<div class="sk-cube-grid">
+	  <div class="sk-cube sk-cube1"></div>
+	  <div class="sk-cube sk-cube2"></div>
+	  <div class="sk-cube sk-cube3"></div>
+	  <div class="sk-cube sk-cube4"></div>
+	  <div class="sk-cube sk-cube5"></div>
+	  <div class="sk-cube sk-cube6"></div>
+	  <div class="sk-cube sk-cube7"></div>
+	  <div class="sk-cube sk-cube8"></div>
+	  <div class="sk-cube sk-cube9"></div>
+	</div>
+  </div>
+<!-- End loader inner -->
+</div>
+<!-- End preloader-->
+
+<!--Wrapper-->
+<div id="wrapper" class="mb-80">
+	
+	<!--Don't remove this line-->
+	<nav class="main-nav" style="display:none;"></nav>
+	
+		<!--Portfolio single-->
+	<section id="portfolio" class=" pt-20 pb-60 ">
+	
+	<!--Container-->
+	<div class="container bg-white pt-100 pb-100">
+		
+		
+			<div class="row ">
+
+			<div class="col-md-12">
+
+									<div class="col-md-8 col-md-offset-2">
+									<div class="block-title mb-30 ">
+										<h2 class="title">Portfolio</h2>
+									</div>
+									<hr class="mb-50">
+									</div>
+
+									<!--Block content-->	
+									<div class="block-content ">
+										
+										<div class="block-nav-work mb-60">
+
+											<ul>
+											<!-- <li><a class="but brd white" href="#"><i class="icon-left-open-mini"></i></a></li> -->
+											<li><a class="but brd white" href="index.html"><i class="icon-cancel-1"></i></a></li>
+											<li><a class="but brd white" href="movie-app.html"><i class="icon-right-open-mini"></i></a></li>
+											</ul>
+										</div>
+
+										<div class="block-single mb-20 clearfix">
+											<div class="col-md-8 col-md-offset-2">
+												<h1 class="title medium mb-20" style="font-size: 40px; line-height: 1">Craft Beer Review Salesforce App</h1>
+													<p class="margBSSmall">Salesforce Application to track and rate craft beers.</p>
+													
+													<hr>
+											
+											</div>
+										</div>
+										
+										
+										<div class="block-single mb-20 clearfix">
+											<div class="col-md-8 col-md-offset-2">
+											
+											<p>My husband and I are big craft beer lovers. We live in Phoenix, Arizona and there are a ton of breweries in the Valley of the Sun. 
+												We drink many different beers that we started to lose track of our favorites. After seeing a LinkedIn post 
+												from <a href="https://www.linkedin.com/in/nick-bryner/">Nick Bryner</a> encouraging new Salesforce professionals to create a Movie Rating App, it clicked – I can create a Beer Review App 
+												on Salesforce to keep track of what we drink and enjoy.  </p>
+											</div>
+										</div>
+
+										<div class="block-single  mb-20 clearfix">
+											
+											<div class="col-md-8 col-md-offset-2">
+											<h4 style="font-size: 18px;"><strong>Schema:</strong></h4>
+											<p>The Account Object is the primary object for the Breweries and I renamed the tabs in the app to Breweries. <br> Then I created two custom objects: 
+												<strong><br><br>Beer (beer__c)
+												<br>Review (review__c) </strong>
+											<br><br>Both are master-detail lookups, because if there was not a brewery, then there would not be a beer or a review. They are linked together arm-in-arm and if the Parent (Brewery or Beer) is deleted the children would be too (Beer and Review). 
+											<br>
+											<br>The tricky part was to connect  the user to the review. The User Object needed to be the master in the master-detail relationship, but one cannot create a master-detail relationship in which the User 
+											object is the master <a href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/relationships_among_objects.htm">(Reference)</a>.
+											Instead, I created a lookup field to the User Object and made it required.  </p>
+											</div>
+										</div>
+										
+										
+											<div class="block-single  mb-20 clearfix">
+												<div class="col-md-8 col-md-offset-2">
+												<img src="beer-imgs/schema.png" alt="">
+												</div>
+											</div>
+											
+											<div class="block-single  mb-20 clearfix">
+											
+												<div class="col-md-8 col-md-offset-2">
+												<h4 style="font-size: 18px;"><strong>Brewery Object:</strong></h4>
+												<p>We are primarily going to be using this app on the go on our mobile devices so I didn’t want too many required fields. We might have had too many beers and forget to enter everything. The three fields we wanted to track 
+													consistently were the name of the brewery, the city, and the state. Because the billing address on accounts can’t be marked as <a href="https://trailhead.salesforce.com/trailblazer-community/feed/0D54S00000A7YTvSAN">required on the page layout</a>, 
+													I created a validation rule to make sure that the city and state are entered.
+
+													<br>
+													<br>
+													<strong>Validation Formula: <br>
+														AND(OR(ISBLANK(BillingCity), ISBLANK(BillingState)))</strong>
+													<br>
+													<br>
+													
+													There is also a rollup summary field “Number of beers” that calculates how many beers we reviewed from that brewery.
+													  </p>
+												</div>
+											</div>
+											
+											
+											<div class="block-single  mb-20 clearfix">
+												<div class="col-md-8 col-md-offset-2">
+												<img src="beer-imgs/brewery.png" alt="">
+												</div>
+											</div>
+
+											<div class="block-single  mb-20 clearfix">
+											
+												<div class="col-md-8 col-md-offset-2">
+												<h4 style="font-size: 18px;"><strong>Beer Object:</strong></h4>
+												<p>All beers come with a name, ABV, and a style. I made these fields required because I thought it would be fun to see what the typical ABV and style we drink (right now it’s 6.3% ABV and Sours).</p> <br>
+												
+													<img src="beer-imgs/styles.png" style="height: 200px; float: left;" alt=""><p>The Style field is a picklist and the values are from <a href="https://en.wikipedia.org/wiki/List_of_beer_styles"></a>Wikipedia. I had no idea there were SO many beer styles. The other style field is where the user can input a style of beer that isn't in the picklist field.
+														The description field is to put a small explanation of the beer. Some craft beers have very interesting flavors. 
+														The Thai Fighter has coconut, lactose, and Thai Tea leaves.</p> <br>
+													
+
+													
+													
+													<p>There are two rollup fields that calculate how many reviews there are and the average. 
+													<br><br><em>But wait! Rollup fields can’t do averages. </em>
+													<br><br>
+													That is why I created a sum rollup field and a formula field (average rating) that took the sum of the reviews and divided it by the number of reviews 
+													<br><br><strong>Validation Formula: <br>total_Reviews__c / Number_of_Reviews__c </strong></p>
+													
+												</p>
+												</div>
+											</div>
+											
+											
+											<div class="block-single  mb-20 clearfix">
+												<div class="col-md-8 col-md-offset-2">
+												<img src="beer-imgs/beer.png" alt="">
+												
+												</div>
+											</div>
+
+											<div class="block-single  mb-20 clearfix">
+											
+												<div class="col-md-8 col-md-offset-2">
+												<h4 style="font-size: 18px;"><strong>Review Object:</strong></h4>
+												<p>The Rating Object has two primary fields - the rating from 1 - 5 (1 being awful and 5 being the best) and a text review of the beer. <br><br>
+													I decided on a 1 to 5 rating scale because it's very typical for most products to be rated from 1 to 5. The field does allow for decimals. Sometimes a beer isn't a 3 or a 4, but maybe a 3.5. There is a validation rule that does not allow 
+													a rating under 1 or over 5.  <br><br>
+													<strong>Validation Formula:<br>
+													OR(Rating__c < 1, Rating__c > 5.00)</strong><br><br>
+
+													The "What did you think?" field is a place where users can put their thoughts on the beer for others to read and compare. 
+												
+												</p>
+													
+												</p>
+												</div>
+											</div>
+
+											<div class="block-single  mb-20 clearfix">
+												<div class="col-md-8 col-md-offset-2">
+												<img src="beer-imgs/review.png" alt="">
+												
+												</div>
+											</div>
+
+											<div class="block-single  mb-60 clearfix">
+											
+												<div class="col-md-8 col-md-offset-2">
+												<h4 style="font-size: 18px;"><strong>Next Steps:</strong></h4>
+												<p>This app is always ongoing tweaks the more my husband and I use it. We find we need to add more validation rules (like City and State required) so we don't mess up the data when we had a few too many beers. 
+													<br><br>The next step is to create a screen flow that we can use on the go to add breweries, beers, and reviews. So stay tuned!
+												
+												</p>
+													
+												<br>
+												</div>
+												<div class="col-md-8 col-md-offset-2">
+													<h4 style="font-size: 18px;"><strong>Video:</strong></h4>
+													<video controls>
+														<source src="beer-imgs/Salesforce Beer Review App.mp4" type="video/mp4">
+														
+														Your browser does not support the video tag.
+													  </video>
+												</div>
+											</div>
+											
+											<div class="block-share t-center mb-40 clearfix">
+
+														<ul class="socials round pb-20">
+
+														
+														<li><a href="#"><i class="icon-twitter-circled"></i><span>Twitter</span></a></li>
+														<li><a href="#"><i class="icon-linkedin-circled"></i><span>Linkedin</span></a></li>
+														
+													</ul>
+													
+													<hr>
+											
+											
+												</div>
+									
+								
+								
+									</div>
+									<!--End block content-->
+
+									
+									</div>
+									
+									
+										</div>
+										<!--End row-->
+
+		</div>
+		<!--End  container-->
+
+		</section>
+			<!--End portfolio single-->
+
+</div>
+<!--End wrapper-->
+
+				
+	
+<!--Javascript-->	
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/owl.carousel.js" type="text/javascript"></script>
+<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="js/masonry.min.js" type="text/javascript"></script>
+<script src="js/jquery.smooth-scroll.js" type="text/javascript"></script>
+<script src="js/jquery.appear.min.js" type="text/javascript"></script>
+<script src="js/placeholders.min.js" type="text/javascript"></script>
+<script src="js/easing.js" type="text/javascript"></script>
+<script src="js/jquery.ui.totop.min.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
+
+
+
+
+
+<script>
+
+</script>
+
+
+<!-- Google analytics -->
+
+
+<!-- End google analytics -->
+
+
+    </body>
+</html>

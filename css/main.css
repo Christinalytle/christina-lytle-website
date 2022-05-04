@@ -855,6 +855,10 @@ a.mobile-btn{
 
 /*Portfolio section*/
 
+video {
+    max-width: 100%;
+    height: auto;
+}
 
 .block-filter ul {
     display: inline-block;
@@ -869,6 +873,10 @@ a.mobile-btn{
     position: relative;
 
 }
+
+.left {
+	float: left;
+	padding: 0 10px 0 0;}
 
 
 .filter li a {
