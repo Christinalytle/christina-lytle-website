@@ -312,7 +312,7 @@ a.mobile-btn{
 /*About section*/
 
 .block-about{
-    padding: 95px 50px 46px;
+    padding: 80px 25px 46px;
     position: relative;
 	-webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
@@ -560,7 +560,7 @@ a.mobile-btn{
 }
 
 .ast-list ul li span{
-	padding:6px 0 6px 23px;
+	padding:6px 0 6px 15px;
 	display:inline-block;
 }
 
@@ -1442,7 +1442,7 @@ ul.latest-post a i {
 	-ms-transform:translateY(-50%);
 	-o-transform: translateY(-50%);
     width: 33%;
-	padding:100px 50px 80px;
+	padding:35px 50px 60px;
 }
 
 
@@ -1472,7 +1472,7 @@ ul.latest-post a i {
     margin: 0 0 14px;
     outline: 0 none;
     overflow: hidden;
-    padding: 9px 15px;
+    padding: 9px 10px;
     resize: none;
     width: 100%;
 	font-family:"open_sansregular",Arial,sans-serif;
@@ -1490,12 +1490,12 @@ ul.latest-post a i {
     color: #ffffff;
     width: 100%;
 	font-family:"open_sansregular",Arial,sans-serif;
-	height:150px;
+	height:75px;
 }
 
 
 .reply-form textarea {
-	height:250px;
+	height:150px;
 }
 
 
